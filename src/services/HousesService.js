@@ -3,7 +3,7 @@ import { BadRequest } from "../utils/Errors"
 
 class HousesService {
   async getHouseById(houseId) {
-    const house = (await dbContext.Houses.findById(houseId)).populate('creator')
+    const house = await dbContext.Houses.findById(houseId).populate('creator')
 
     if (house == null) {
       throw new BadRequest(`No house found with the id of ${houseId}`)
