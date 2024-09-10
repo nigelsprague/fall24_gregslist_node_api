@@ -2,13 +2,13 @@ import { Schema } from "mongoose";
 
 export const HouseSchema = new Schema(
   {
-    bedrooms: { type: Number, required: true, min: 0, max: 35 },
+    bedrooms: { type: Number, required: true, min: 0, max: 30 },
     bathrooms: { type: Number, required: true, min: 0, max: 25 },
-    levels: { type: Number, required: true, min: 1, max: 25 },
+    levels: { type: Number, required: true, min: 1, max: 4 },
     imgUrl: { type: String, required: true, maxlength: 500 },
-    year: { type: Number, required: true, min: 1700, max: 2024 },
+    year: { type: Number, required: true, min: 1000, max: 2024 },
     price: { type: Number, required: true, min: 0, max: 10000000 },
-    description: { type: String, maxlength: 5000 },
+    description: { type: String, maxlength: 500 },
     creatorId: { type: Schema.ObjectId, required: true, ref: 'Account' }
   },
   {
